@@ -9,7 +9,7 @@
         android:gravity="right"
         android:text="Intervals: "
         android:layout_gravity="center" />
-    <NumberPicker
+    <com.stupidsimple.intervaltimer.NumberPicker
         android:id="@+id/single_picker"
         android:layout_weight="1"
         android:layout_width="wrap_content"

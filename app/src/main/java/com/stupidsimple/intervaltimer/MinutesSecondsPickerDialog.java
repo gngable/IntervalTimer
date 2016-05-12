@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.NumberPicker;
+import android.widget.*;
+import android.graphics.*;
 
 /**
  * Created by Nick Gable on 5/3/2016.
@@ -80,6 +82,15 @@ public class MinutesSecondsPickerDialog extends DialogFragment {
         minutepicker.setMaxValue(59);
         minutepicker.setDisplayedValues(minutenums);
         minutepicker.setValue(getMinutes(TimerState.maxCounts.get(state)));
+		
+		//minutepicker.addOnLayoutChangeListener(new LayoutChangeListener());
+		//for (int i = 0; i < minutepicker.getChildCount(); i++){
+			//if (minutepicker.getChildAt(i) instanceof EditText){
+				//((EditText) minutepicker.getChildAt(i)).setTextSize(25);
+				//((EditText) minutepicker.getChildAt(i)).setTextColor(Color.parseColor("#333333"));
+			//}
+		//}
+		//((TextView)minutepicker.getChildAt(1)).setTextSize(10);
 
         final NumberPicker secondpicker = (NumberPicker)pickerview.findViewById(R.id.seconds_picker);
 
