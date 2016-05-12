@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="top"
     android:orientation="vertical"
-    tools:context="com.stupidsimple.intervaltimer.MainActivity">
+    tools:context="com.servantsoftware.intervaltimer.MainActivity">
 
 	<LinearLayout
         android:layout_width="match_parent"

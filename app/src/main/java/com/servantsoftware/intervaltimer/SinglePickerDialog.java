@@ -1,4 +1,4 @@
-package com.stupidsimple.intervaltimer;
+package com.servantsoftware.intervaltimer;
 
 import android.app.Activity;
 import android.app.AlertDialog;

@@ -1,4 +1,4 @@
-package com.stupidsimple.intervaltimer;
+package com.servantsoftware.intervaltimer;
 
 import java.util.HashMap;
 
