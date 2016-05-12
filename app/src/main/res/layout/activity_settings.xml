@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/intervals_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:text="# of intervals: "
+            android:layout_gravity="center" />
+        <!--NumberPicker
+            android:id="@+id/intervals_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="80sp"
+            android:measureWithLargestChild="true" /-->
+        <Button
+            android:id="@+id/edit_intervals_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="editIntervalsButtonClick"
+            android:text="Set" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/warmup_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:text="Seconds for warmup: "
+            android:layout_gravity="center" />
+        <!--NumberPicker
+            android:id="@+id/warmup_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="80sp"
+            android:measureWithLargestChild="true" /-->
+        <Button
+            android:id="@+id/edit_warmup_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="editWarmUpButtonClick"
+            android:text="Set" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/slow_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:text="Seconds for slow interval: "
+            android:layout_gravity="center" />
+        <!--NumberPicker
+            android:id="@+id/slow_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="80sp"
+            android:measureWithLargestChild="true" /-->
+        <Button
+            android:id="@+id/edit_slow_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="editSlowButtonClick"
+            android:text="Set" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/fast_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:text="Seconds for fast interval: "
+            android:layout_gravity="center" />
+        <!--NumberPicker
+            android:id="@+id/fast_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="80sp"
+            android:measureWithLargestChild="true" /-->
+        <Button
+            android:id="@+id/edit_fast_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="editFastButtonClick"
+            android:text="Set" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/cool_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:text="Seconds for cool down: "
+            android:layout_gravity="center" />
+        <!--NumberPicker
+            android:id="@+id/cool_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="80sp"
+            android:measureWithLargestChild="true" /-->
+        <Button
+            android:id="@+id/edit_cooldown_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="editCoolDownButtonClick"
+            android:text="Set" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/darker_gray"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="right"
+        android:layout_weight="1"
+        android:layout_gravity="center" />
+    <Button
+        android:id="@+id/action_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="actionButtonClick"
+        android:layout_gravity="bottom"
+        android:text="Done" />
+</LinearLayout>
