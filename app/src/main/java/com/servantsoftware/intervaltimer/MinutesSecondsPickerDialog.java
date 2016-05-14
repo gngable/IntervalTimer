@@ -1,4 +1,26 @@
-package com.stupidsimple.intervaltimer;
+/*
+ Copyright (c) 2016 Nick Gable (Servant Software)
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+ */
+
+package com.servantsoftware.intervaltimer;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -9,6 +31,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.NumberPicker;
+import android.widget.*;
+import android.graphics.*;
 
 /**
  * Created by Nick Gable on 5/3/2016.
@@ -80,6 +104,15 @@ public class MinutesSecondsPickerDialog extends DialogFragment {
         minutepicker.setMaxValue(59);
         minutepicker.setDisplayedValues(minutenums);
         minutepicker.setValue(getMinutes(TimerState.maxCounts.get(state)));
+		
+		//minutepicker.addOnLayoutChangeListener(new LayoutChangeListener());
+		//for (int i = 0; i < minutepicker.getChildCount(); i++){
+			//if (minutepicker.getChildAt(i) instanceof EditText){
+				//((EditText) minutepicker.getChildAt(i)).setTextSize(25);
+				//((EditText) minutepicker.getChildAt(i)).setTextColor(Color.parseColor("#333333"));
+			//}
+		//}
+		//((TextView)minutepicker.getChildAt(1)).setTextSize(10);
 
         final NumberPicker secondpicker = (NumberPicker)pickerview.findViewById(R.id.seconds_picker);
 
