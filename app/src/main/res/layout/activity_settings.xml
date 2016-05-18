@@ -50,6 +50,7 @@ SOFTWARE.
 			android:layout_gravity="center"
             android:onClick="editIntervalsButtonClick"
             android:text="Set" />
+
     </LinearLayout>
 
     <View
