@@ -40,16 +40,18 @@ SOFTWARE.
             android:textSize="30sp"
             android:gravity="center"
             android:layout_weight="1"
+            android:onClick="editIntervalsButtonClick"
             android:text="# of intervals: "
             android:layout_gravity="center" />
         
-        <Button
+        <!--Button
             android:id="@+id/edit_intervals_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 			android:layout_gravity="center"
             android:onClick="editIntervalsButtonClick"
-            android:text="Set" />
+			android:background="?android:colorBackground"
+            android:text="..." /-->
 
     </LinearLayout>
 
@@ -72,16 +74,18 @@ SOFTWARE.
             android:textSize="30sp"
             android:gravity="center"
             android:layout_weight="1"
+            android:onClick="editWarmUpButtonClick"
             android:text="Seconds for warmup: "
             android:layout_gravity="center" />
         
-        <Button
+        <!--Button
             android:id="@+id/edit_warmup_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 			android:layout_gravity="center"
             android:onClick="editWarmUpButtonClick"
-            android:text="Set" />
+			android:background="?android:colorBackground"
+            android:text="..." /-->
     </LinearLayout>
 
     <View
@@ -103,16 +107,18 @@ SOFTWARE.
             android:textSize="30sp"
             android:gravity="center"
             android:layout_weight="1"
+            android:onClick="editSlowButtonClick"
             android:text="Seconds for slow interval: "
             android:layout_gravity="center" />
         
-        <Button
+        <!--Button
             android:id="@+id/edit_slow_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="editSlowButtonClick"
 			android:layout_gravity="center"
-            android:text="Set" />
+			android:background="?android:colorBackground"
+            android:text="..." /-->
     </LinearLayout>
 
     <View
@@ -134,16 +140,18 @@ SOFTWARE.
             android:textSize="30sp"
             android:gravity="center"
             android:layout_weight="1"
+            android:onClick="editFastButtonClick"
             android:text="Seconds for fast interval: "
             android:layout_gravity="center" />
         
-        <Button
+        <!--Button
             android:id="@+id/edit_fast_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="editFastButtonClick"
 			android:layout_gravity="center"
-            android:text="Set" />
+			android:background="?android:colorBackground"
+            android:text="..." /-->
     </LinearLayout>
 
     <View
@@ -166,16 +174,25 @@ SOFTWARE.
             android:gravity="center"
             android:layout_weight="1"
             android:text="Seconds for cool down: "
+			android:onClick="editCoolDownButtonClick"
             android:layout_gravity="center" />
         
-        <Button
+        <!--Button
             android:id="@+id/edit_cooldown_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="editCoolDownButtonClick"
 			android:layout_gravity="center"
-            android:text="Set" />
+			android:background="?android:colorBackground"
+            android:text="..." /-->
     </LinearLayout>
+	
+	<View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="@android:color/darker_gray"/>
     
     <Button
         android:id="@+id/action_button"
@@ -184,6 +201,6 @@ SOFTWARE.
         android:onClick="actionButtonClick"
         android:layout_gravity="bottom"
 		android:textSize="50sp"
-		android:background="@android:color/holo_green_light"
+		android:background="?android:colorBackground"
         android:text="Done" />
 </LinearLayout>

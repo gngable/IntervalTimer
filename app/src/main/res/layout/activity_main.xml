@@ -74,7 +74,7 @@ SOFTWARE.
 			android:onClick="settingsButtonClick"
 			android:textSize="20sp"
 			android:background="?android:colorBackground"
-			android:text="S" />
+			android:text="  S   " />
 			
 		
 		<!--TextView
