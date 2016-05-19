@@ -82,7 +82,7 @@ public class SettingsActivity extends Activity implements SinglePickerDialog.Sin
     public void editWarmUpButtonClick(View view){
         MinutesSecondsPickerDialog mspd = new MinutesSecondsPickerDialog();
         mspd.setState(TimerState.State.WARMUP);
-        mspd.setTitle("How long for warmup?");
+        mspd.setTitle("How long for warm up?");
         mspd.show(getFragmentManager(), "WarmUpDialog");
     }
 
@@ -103,7 +103,7 @@ public class SettingsActivity extends Activity implements SinglePickerDialog.Sin
     public void editCoolDownButtonClick(View view){
         MinutesSecondsPickerDialog mspd = new MinutesSecondsPickerDialog();
         mspd.setState(TimerState.State.COOLDOWN);
-        mspd.setTitle("How long for cooldown?");
+        mspd.setTitle("How long for cool down?");
         mspd.show(getFragmentManager(), "CoolDownDialog");
     }
 
