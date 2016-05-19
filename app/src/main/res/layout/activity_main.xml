@@ -59,14 +59,36 @@ SOFTWARE.
 			android:src="@drawable/gear"
 			android:text="S"/-->
 		
-		<Button
+		<!--Button
 			android:id="@+id/settings_button"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:onClick="settingsButtonClick"
 			android:textSize="20sp"
-			android:text="S"/>
+			android:background="?android:colorBackground"
+			android:text="S"/-->
 		
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:onClick="settingsButtonClick"
+			android:textSize="20sp"
+			android:background="?android:colorBackground"
+			android:text="S" />
+			
+		
+		<!--TextView
+		android:id="@+id/settings_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:lines="3"
+		android:clickable="true"
+		android:onClick="settingsButtonClick"
+		android:textSize="20sp"
+		android:background="?android:colorBackground"
+		android:rotation="-90"
+		android:text="Settings"/-->
+			
 	</LinearLayout>
 
     <TextView
@@ -103,6 +125,7 @@ SOFTWARE.
                 android:layout_height="match_parent"
                 android:onClick="resetButtonClick"
                 android:textSize="20sp"
+				android:background="?android:colorBackground"
                 android:text="R"/>
 
             <!--Button
@@ -121,6 +144,7 @@ SOFTWARE.
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="actionButtonClick"
+			android:background="?android:colorBackground"
             android:textSize="40sp"
             android:text="Start!"/>
 
@@ -130,9 +154,10 @@ SOFTWARE.
             android:layout_height="match_parent"
             android:onClick="nextButtonClick"
             android:textSize="20sp"
-
-            android:background="@android:color/holo_green_light"
+			android:background="?android:colorBackground"
             android:text=">>"/>
+		
+		<!--android:background="@android:color/holo_green_light"-->
 
     </LinearLayout>
 </LinearLayout>
