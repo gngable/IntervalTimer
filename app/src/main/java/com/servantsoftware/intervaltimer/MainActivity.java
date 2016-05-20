@@ -36,6 +36,7 @@ import android.widget.TextView;
 import java.sql.Time;
 import java.util.Timer;
 import java.util.TimerTask;
+import android.content.*;
 
 //import com.google.android.gms.appindexing.Action;
 //import com.google.android.gms.appindexing.AppIndex;
@@ -58,11 +59,17 @@ public class MainActivity extends Activity {
     protected MediaPlayer fastMP = null;
     protected MediaPlayer coolMP = null;
     protected MediaPlayer finishedMP = null;
+	
+	//public static Context applicationContext = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+		
+		TimerState.readSettings(getApplicationContext());
+		
+		//applicationContext = getApplicationContext();
 
         statusLabel = (TextView)findViewById(R.id.status_label);
         countLabel = (TextView)findViewById(R.id.count_label);
@@ -97,6 +104,8 @@ public class MainActivity extends Activity {
             resetAll();
         }
     }
+	
+	
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -118,7 +127,7 @@ public class MainActivity extends Activity {
             case NOTSTARTED: {
                 actionButton.setText("Pause");
                 TimerState.currentState = TimerState.State.WARMUP;
-                intervalLabel.setText("Interval 1 of " + TimerState.intervalMax);
+					intervalLabel.setText("Interval 1 of " + TimerState.intervalMax);
                 countLabel.setText(TimerState.getTimeString(TimerState.maxCounts.get(TimerState.currentState)));
                 playSound(startMP);
                 break;
@@ -225,7 +234,7 @@ public class MainActivity extends Activity {
                     case FAST: {
                         TimerState.currentInterval++;
 
-                        if (TimerState.currentInterval > TimerState.intervalMax) {
+							if (TimerState.currentInterval > TimerState.intervalMax) {
                             TimerState.currentState = TimerState.State.COOLDOWN;
                             playSound(coolMP);
                         } else {

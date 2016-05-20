@@ -202,5 +202,5 @@ SOFTWARE.
         android:layout_gravity="bottom"
 		android:textSize="50sp"
 		android:background="?android:colorBackground"
-        android:text="Done" />
+        android:text="Save" />
 </LinearLayout>

@@ -42,6 +42,8 @@ public class SettingsActivity extends Activity implements SinglePickerDialog.Sin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+		
+		TimerState.readSettings(getApplicationContext());
 
         String[] nums = new String[100];
         for(int i=0; i<nums.length; i++) nums[i] = Integer.toString(i + 1);
@@ -68,6 +70,7 @@ public class SettingsActivity extends Activity implements SinglePickerDialog.Sin
     }
 
     public void actionButtonClick(View view){
+		TimerState.saveSettings(getApplicationContext());
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
