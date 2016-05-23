@@ -32,6 +32,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.app.*;
 
 /**
  * Created by Nick Gable on 5/2/2016.
@@ -73,6 +74,12 @@ public class SettingsActivity extends Activity implements SinglePickerDialog.Sin
 		TimerState.saveSettings(getApplicationContext());
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+	
+	public void aboutButtonClick(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Created by Nick Gable (Servant Software).\nThis app is free, has no ads, and no in app purchases.\nEnjoy!");
+		builder.create().show();
     }
 
     public void editIntervalsButtonClick(View view){

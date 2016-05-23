@@ -37,6 +37,7 @@ import java.sql.Time;
 import java.util.Timer;
 import java.util.TimerTask;
 import android.content.*;
+import android.app.*;
 
 //import com.google.android.gms.appindexing.Action;
 //import com.google.android.gms.appindexing.AppIndex;
@@ -105,8 +106,6 @@ public class MainActivity extends Activity {
         }
     }
 	
-	
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -164,15 +163,23 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
+	
+//	public void aboutButtonClick(View view){
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//		builder.setMessage("This app was created by Nick Gable (Servant Software).\nIt is free, has no ads, and no in app purchases.\nEnjoy!");
+//		builder.create().show();
+//    }
 
     public void nextButtonClick(View view){
+		boolean changed = false;
         synchronized (TimerState.stateLock) {
             if (TimerState.currentState == TimerState.State.SLOW || TimerState.currentState == TimerState.State.FAST || TimerState.currentState == TimerState.State.WARMUP || TimerState.currentState == TimerState.State.COOLDOWN) {
                 TimerState.currentCount = TimerState.maxCounts.get(TimerState.currentState) + 5;
+				changed = true;
             }
         }
 
-        doTimerAction();
+        if (changed) doTimerAction();
     }
 
     public void resetButtonClick(View view){

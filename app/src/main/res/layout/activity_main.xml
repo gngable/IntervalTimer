@@ -41,6 +41,14 @@ SOFTWARE.
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 		
+		<!--TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:onClick="aboutButtonClick"
+			android:textSize="10sp"
+			android:background="?android:colorBackground"
+			android:text="   A  \n   b \n   o \n   u \n   t " /-->
+		
     <TextView
         android:id="@+id/status_label"
         android:layout_width="wrap_content"
@@ -70,11 +78,11 @@ SOFTWARE.
 		
 		<TextView
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
+			android:layout_height="match_parent"
 			android:onClick="settingsButtonClick"
-			android:textSize="20sp"
+			android:textSize="7sp"
 			android:background="?android:colorBackground"
-			android:text="  S   " />
+			android:text="  S   \n  e   \n  t   \n  t   \n  i   \n  n   \n  g   \n  s   " />
 			
 		
 		<!--TextView
@@ -97,6 +105,7 @@ SOFTWARE.
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:gravity="center"
+		android:onClick="settingsButtonClick"
         android:text="Interval 1" />
 
     <TextView
@@ -124,9 +133,9 @@ SOFTWARE.
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:onClick="resetButtonClick"
-                android:textSize="20sp"
+                android:textSize="10sp"
 				android:background="?android:colorBackground"
-                android:text="R"/>
+                android:text="Reset"/>
 
             <!--Button
                 android:id="@+id/settings_button"
