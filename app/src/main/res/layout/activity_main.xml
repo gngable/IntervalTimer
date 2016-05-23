@@ -81,8 +81,10 @@ SOFTWARE.
 			android:layout_height="match_parent"
 			android:onClick="settingsButtonClick"
 			android:textSize="7sp"
+			android:padding="25px"
+			android:gravity="center"
 			android:background="?android:colorBackground"
-			android:text="  S   \n  e   \n  t   \n  t   \n  i   \n  n   \n  g   \n  s   " />
+			android:text="S\ne\nt\nt\ni\nn\ng\ns" />
 			
 		
 		<!--TextView
