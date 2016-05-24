@@ -77,11 +77,11 @@ public class MainActivity extends Activity {
         intervalLabel = (TextView)findViewById(R.id.interval_label);
         actionButton = (Button)findViewById(R.id.action_button);
 
-        if (startMP == null) startMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_start);
-        if (slowMP == null) slowMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_slow);
-        if (fastMP == null) fastMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_fast);
-        if (coolMP == null) coolMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_cool);
-        if (finishedMP == null) finishedMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_finished);
+        if (startMP == null) startMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_start_new);
+        if (slowMP == null) slowMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_slow_new);
+        if (fastMP == null) fastMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_fast_new);
+        if (coolMP == null) coolMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_cool_new);
+        if (finishedMP == null) finishedMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_finished_new);
 
         if (savedInstanceState != null) {
             String prestate = savedInstanceState.getString(prePauseLabel);
