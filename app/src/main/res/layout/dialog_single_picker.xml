@@ -3,7 +3,7 @@
 <!--
 MIT License
 
-Copyright (c) 2016 Nick Gable (Servant Software)
+Copyright (c) 2016 Nick Gable (Mercangel Software)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -34,7 +34,7 @@ SOFTWARE.
         android:gravity="right"
         android:text="Intervals: "
         android:layout_gravity="center" />
-    <com.servantsoftware.intervaltimer.NumberPicker
+    <com.mercangelsoftware.intervaltimer.NumberPicker
         android:id="@+id/single_picker"
         android:layout_weight="1"
         android:layout_width="wrap_content"

@@ -1,7 +1,7 @@
 /*
  MIT License
  
- Copyright (c) 2016 Nick Gable (Servant Software)
+ Copyright (c) 2016 Nick Gable (Mercangel Software)
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
  SOFTWARE.
  */
 
-package com.servantsoftware.intervaltimer;
+package com.mercangelsoftware.intervaltimer;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -78,7 +78,7 @@ public class SettingsActivity extends Activity implements SinglePickerDialog.Sin
 	
 	public void aboutButtonClick(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage("Created by Nick Gable (Servant Software).\nThis app is free, has no ads, and no in app purchases.\nEnjoy!");
+		builder.setMessage("Created by Nick Gable (Mercangel Software).\nThis app is free, has no ads, and no in app purchases.\nEnjoy!");
 		builder.create().show();
     }
 

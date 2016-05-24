@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2016 Nick Gable (Servant Software)
+ Copyright (c) 2016 Nick Gable (Mercangel Software)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-package com.servantsoftware.intervaltimer;
+package com.mercangelsoftware.intervaltimer;
 
 import android.app.Activity;
 //import android.net.Uri;
@@ -164,11 +164,6 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 	
-//	public void aboutButtonClick(View view){
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//		builder.setMessage("This app was created by Nick Gable (Servant Software).\nIt is free, has no ads, and no in app purchases.\nEnjoy!");
-//		builder.create().show();
-//    }
 
     public void nextButtonClick(View view){
 		boolean changed = false;
