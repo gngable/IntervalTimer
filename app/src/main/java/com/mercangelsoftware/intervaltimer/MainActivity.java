@@ -212,6 +212,7 @@ public class MainActivity extends Activity {
 
     public void doTimerAction(){
         boolean transitioned = false;
+        boolean updatecount = true;
 
         synchronized (TimerState.stateLock) {
             TimerState.currentCount++;
@@ -236,7 +237,7 @@ public class MainActivity extends Activity {
                     case FAST: {
                         TimerState.currentInterval++;
 
-							if (TimerState.currentInterval > TimerState.intervalMax) {
+                        if (TimerState.currentInterval > TimerState.intervalMax) {
                             TimerState.currentState = TimerState.State.COOLDOWN;
                             playSound(coolMP);
                         } else {
@@ -275,6 +276,7 @@ public class MainActivity extends Activity {
                     }
                 });
             } else if (TimerState.currentState == TimerState.State.FINISHED) {
+                updatecount = false;
                 actionButton.post(new Runnable() {
                     @Override
                     public void run() {
@@ -285,13 +287,13 @@ public class MainActivity extends Activity {
             }
         }
 
-        countLabel.post(new Runnable() {
-            @Override
-            public void run() {
-                countLabel.setText(TimerState.getTimeString(TimerState.maxCounts.get(TimerState.currentState) - TimerState.currentCount));
-            }
-        });
-
-
+        if (updatecount) {
+            countLabel.post(new Runnable() {
+                @Override
+                public void run() {
+                    countLabel.setText(TimerState.getTimeString(TimerState.maxCounts.get(TimerState.currentState) - TimerState.currentCount));
+                }
+            });
+        }
     }
 }
