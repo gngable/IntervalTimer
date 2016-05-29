@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 	
 <!--
-Copyright (c) 2016 Nick Gable (Servant Software)
+MIT License
+
+Copyright (c) 2016 Nick Gable (Mercangel Software)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -32,12 +34,20 @@ SOFTWARE.
     android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="top"
     android:orientation="vertical"
-    tools:context="com.servantsoftware.intervaltimer.MainActivity">
+    tools:context="com.mercangelsoftware.intervaltimer.MainActivity">
 
 	<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+		
+		<!--TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:onClick="aboutButtonClick"
+			android:textSize="10sp"
+			android:background="?android:colorBackground"
+			android:text="   A  \n   b \n   o \n   u \n   t " /-->
 		
     <TextView
         android:id="@+id/status_label"
@@ -48,14 +58,47 @@ SOFTWARE.
         android:gravity="center"
         android:text="Ready?" />
 	
-		<Button
+		<!--ImageButton
 			android:id="@+id/settings_button"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:onClick="settingsButtonClick"
 			android:textSize="20sp"
-			android:text="S"/>
+			android:src="@drawable/gear"
+			android:text="S"/-->
 		
+		<!--Button
+			android:id="@+id/settings_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:onClick="settingsButtonClick"
+			android:textSize="20sp"
+			android:background="?android:colorBackground"
+			android:text="S"/-->
+		
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:onClick="settingsButtonClick"
+			android:textSize="7sp"
+			android:padding="25px"
+			android:gravity="center"
+			android:background="?android:colorBackground"
+			android:text="S\ne\nt\nt\ni\nn\ng\ns" />
+			
+		
+		<!--TextView
+		android:id="@+id/settings_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:lines="3"
+		android:clickable="true"
+		android:onClick="settingsButtonClick"
+		android:textSize="20sp"
+		android:background="?android:colorBackground"
+		android:rotation="-90"
+		android:text="Settings"/-->
+			
 	</LinearLayout>
 
     <TextView
@@ -64,6 +107,7 @@ SOFTWARE.
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:gravity="center"
+		android:onClick="settingsButtonClick"
         android:text="Interval 1" />
 
     <TextView
@@ -91,8 +135,9 @@ SOFTWARE.
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:onClick="resetButtonClick"
-                android:textSize="20sp"
-                android:text="R"/>
+                android:textSize="10sp"
+				android:background="?android:colorBackground"
+                android:text="Reset"/>
 
             <!--Button
                 android:id="@+id/settings_button"
@@ -110,6 +155,7 @@ SOFTWARE.
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="actionButtonClick"
+			android:background="?android:colorBackground"
             android:textSize="40sp"
             android:text="Start!"/>
 
@@ -119,9 +165,10 @@ SOFTWARE.
             android:layout_height="match_parent"
             android:onClick="nextButtonClick"
             android:textSize="20sp"
-
-            android:background="@android:color/holo_green_light"
+			android:background="?android:colorBackground"
             android:text=">>"/>
+		
+		<!--android:background="@android:color/holo_green_light"-->
 
     </LinearLayout>
 </LinearLayout>

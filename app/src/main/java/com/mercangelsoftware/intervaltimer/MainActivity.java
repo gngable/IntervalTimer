@@ -1,5 +1,7 @@
 /*
-Copyright (c) 2016 Nick Gable
+MIT License
+
+ Copyright (c) 2016 Nick Gable (Mercangel Software)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-package com.servantsoftware.intervaltimer;
+package com.mercangelsoftware.intervaltimer;
 
 import android.app.Activity;
 //import android.net.Uri;
@@ -34,6 +36,8 @@ import android.widget.TextView;
 import java.sql.Time;
 import java.util.Timer;
 import java.util.TimerTask;
+import android.content.*;
+import android.app.*;
 
 //import com.google.android.gms.appindexing.Action;
 //import com.google.android.gms.appindexing.AppIndex;
@@ -56,22 +60,28 @@ public class MainActivity extends Activity {
     protected MediaPlayer fastMP = null;
     protected MediaPlayer coolMP = null;
     protected MediaPlayer finishedMP = null;
+	
+	//public static Context applicationContext = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+		
+		TimerState.readSettings(getApplicationContext());
+		
+		//applicationContext = getApplicationContext();
 
         statusLabel = (TextView)findViewById(R.id.status_label);
         countLabel = (TextView)findViewById(R.id.count_label);
         intervalLabel = (TextView)findViewById(R.id.interval_label);
         actionButton = (Button)findViewById(R.id.action_button);
 
-        if (startMP == null) startMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_start);
-        if (slowMP == null) slowMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_slow);
-        if (fastMP == null) fastMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_fast);
-        if (coolMP == null) coolMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_cool);
-        if (finishedMP == null) finishedMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_finished);
+        if (startMP == null) startMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_start_new);
+        if (slowMP == null) slowMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_slow_new);
+        if (fastMP == null) fastMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_fast_new);
+        if (coolMP == null) coolMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_cool_new);
+        if (finishedMP == null) finishedMP = MediaPlayer.create(getApplicationContext(), R.raw.sound_finished_new);
 
         if (savedInstanceState != null) {
             String prestate = savedInstanceState.getString(prePauseLabel);
@@ -95,7 +105,7 @@ public class MainActivity extends Activity {
             resetAll();
         }
     }
-
+	
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -116,7 +126,7 @@ public class MainActivity extends Activity {
             case NOTSTARTED: {
                 actionButton.setText("Pause");
                 TimerState.currentState = TimerState.State.WARMUP;
-                intervalLabel.setText("Interval 1 of " + TimerState.intervalMax);
+					intervalLabel.setText("Interval 1 of " + TimerState.intervalMax);
                 countLabel.setText(TimerState.getTimeString(TimerState.maxCounts.get(TimerState.currentState)));
                 playSound(startMP);
                 break;
@@ -153,15 +163,18 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
+	
 
     public void nextButtonClick(View view){
+		boolean changed = false;
         synchronized (TimerState.stateLock) {
             if (TimerState.currentState == TimerState.State.SLOW || TimerState.currentState == TimerState.State.FAST || TimerState.currentState == TimerState.State.WARMUP || TimerState.currentState == TimerState.State.COOLDOWN) {
                 TimerState.currentCount = TimerState.maxCounts.get(TimerState.currentState) + 5;
+				changed = true;
             }
         }
 
-        doTimerAction();
+        if (changed) doTimerAction();
     }
 
     public void resetButtonClick(View view){
@@ -223,7 +236,7 @@ public class MainActivity extends Activity {
                     case FAST: {
                         TimerState.currentInterval++;
 
-                        if (TimerState.currentInterval > TimerState.intervalMax) {
+							if (TimerState.currentInterval > TimerState.intervalMax) {
                             TimerState.currentState = TimerState.State.COOLDOWN;
                             playSound(coolMP);
                         } else {

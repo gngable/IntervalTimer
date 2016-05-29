@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2016 Nick Gable (Servant Software)
+ MIT License
+ 
+ Copyright (c) 2016 Nick Gable (Mercangel Software)
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +22,7 @@
  SOFTWARE.
  */
 
-package com.servantsoftware.intervaltimer;
+package com.mercangelsoftware.intervaltimer;
 import android.content.*;
 import android.graphics.*;
 import android.util.*;

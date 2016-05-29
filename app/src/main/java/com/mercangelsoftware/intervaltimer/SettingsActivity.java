@@ -1,5 +1,7 @@
 /*
- Copyright (c) 2016 Nick Gable (Servant Software)
+ MIT License
+ 
+ Copyright (c) 2016 Nick Gable (Mercangel Software)
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +22,7 @@
  SOFTWARE.
  */
 
-package com.servantsoftware.intervaltimer;
+package com.mercangelsoftware.intervaltimer;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -30,6 +32,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.app.*;
 
 /**
  * Created by Nick Gable on 5/2/2016.
@@ -40,6 +43,8 @@ public class SettingsActivity extends Activity implements SinglePickerDialog.Sin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+		
+		TimerState.readSettings(getApplicationContext());
 
         String[] nums = new String[100];
         for(int i=0; i<nums.length; i++) nums[i] = Integer.toString(i + 1);
@@ -66,8 +71,15 @@ public class SettingsActivity extends Activity implements SinglePickerDialog.Sin
     }
 
     public void actionButtonClick(View view){
+		TimerState.saveSettings(getApplicationContext());
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+	
+	public void aboutButtonClick(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Created by Nick Gable (Mercangel Software).\nThis app is free, has no ads, and no in app purchases.\nEnjoy!");
+		builder.create().show();
     }
 
     public void editIntervalsButtonClick(View view){
@@ -80,7 +92,7 @@ public class SettingsActivity extends Activity implements SinglePickerDialog.Sin
     public void editWarmUpButtonClick(View view){
         MinutesSecondsPickerDialog mspd = new MinutesSecondsPickerDialog();
         mspd.setState(TimerState.State.WARMUP);
-        mspd.setTitle("How long for warmup?");
+        mspd.setTitle("How long for warm up?");
         mspd.show(getFragmentManager(), "WarmUpDialog");
     }
 
@@ -101,7 +113,7 @@ public class SettingsActivity extends Activity implements SinglePickerDialog.Sin
     public void editCoolDownButtonClick(View view){
         MinutesSecondsPickerDialog mspd = new MinutesSecondsPickerDialog();
         mspd.setState(TimerState.State.COOLDOWN);
-        mspd.setTitle("How long for cooldown?");
+        mspd.setTitle("How long for cool down?");
         mspd.show(getFragmentManager(), "CoolDownDialog");
     }
 
